@@ -27,6 +27,11 @@ if(command === 'add'){
 	}else {
 		console.log('Note not found');
 	}
+}else if(command === 'list'){
+	var allNotes = notes.getAll();
+	console.log(`Printing ${allNotes.length} note(s).`);
+	allNotes.forEach((note) => notes.logNote(note));
+
 }else if(command === 'read'){
 	var readedNote = notes.getNote(argv.title);
 	if(readedNote){

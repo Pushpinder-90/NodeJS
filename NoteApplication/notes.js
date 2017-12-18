@@ -56,17 +56,22 @@ var removeNote = (title) => {
 
 // code to call logged note
  var logNote = (note) =>{
+ 	debugger;
  	console.log('--');
 	console.log(`Body : ${note.body}`);
 	console.log(`Title: ${note.title}`);
  }
 
-
+// code to get all notes
+var getAll = () => {
+	return fetchNotes();
+}
 
 // Mendatory to add every function in exports to call in the main code
 module.exports = {
 	addNote:addNote,
 	removeNote:removeNote,
 	getNote:getNote,
-	logNote:logNote
+	logNote:logNote,
+	getAll:getAll
 	}
