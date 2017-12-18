@@ -1,0 +1,19 @@
+{
+  "name": "noteapplication",
+  "version": "1.0.0",
+  "description": "notes application in nodejs to perform all crud operations",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "application"
+  ],
+  "author": "pushpinder singh",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "yargs": "^10.0.3"
+  }
+}
