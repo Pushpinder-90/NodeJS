@@ -4,7 +4,39 @@ const yargs = require('yargs');
 const lodash = require('lodash');
 const notes = require('./notes.js');
 
-const argv = yargs.argv; // to get arguments from CLI
+//const argv = yargs.argv; // to get arguments from CLI
+
+// we can create a titleOptions as variable to assign it to title in commands
+const titleOptions = {
+		description :'Title of Note',
+		demand : true,
+		alias : 't'
+	};
+//to use yargs command and we can create same commands for other functions
+const argv = yargs
+.command('add' ,'Add a new Note', {
+	title: {
+		description :'Title of Note',
+		demand : true,
+		alias : 't'
+	},
+	body: {
+		description : 'Body of Note',
+		demand : true,
+		alias : 'b'
+	}
+})
+.command('list','Get list of all notes',{})
+.command('read','Read a Note',{
+	title : titleOptions  // assigning titleOption as variable to title
+})
+.command('remove' ,'Remove a Note', {
+	title : titleOptions 
+})
+.help()
+.argv;
+
+
 
 var command = argv._[0]; // gettig first arguement 
 // console.log('args',args);
